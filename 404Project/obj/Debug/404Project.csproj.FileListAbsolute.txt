@@ -89,4 +89,3 @@ C:\Users\Зу\source\repos\404Project\404Project\bin\Debug\Resources\Fonts\Monts
 C:\Users\Зу\source\repos\404Project\404Project\bin\Debug\Resources\Fonts\Montserrat-ThinItalic.ttf
 C:\Users\Зу\source\repos\404Project\404Project\obj\Debug\VIews\Pages\AgentPage.g.cs
 C:\Users\Зу\source\repos\404Project\404Project\obj\Debug\VIews\Pages\AgentPage.baml
-C:\Users\Зу\source\repos\404Project\404Project\obj\Debug\404Project.csprojAssemblyReference.cache
