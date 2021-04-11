@@ -9,7 +9,7 @@
       Title="Агенты">
 
     <Grid Background="White">
-        <ListBox x:Name="AgentListBox" Margin="44,55,37,28.6">
+        <ListBox x:Name="AgentListBox" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="44,55,37,28.6">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

@@ -11,7 +11,7 @@
             <ColumnDefinition Width="401*"/>
             <ColumnDefinition Width="392*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="ProductListBox" Margin="26,59,13.6,187">
+        <ListBox x:Name="ProductListBox" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="26,59,13.6,187">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -41,7 +41,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox x:Name="SelectedListBox" Margin="14.4,59,21.6,187" Grid.Column="1">
+        <ListBox x:Name="SelectedListBox" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="14.4,59,21.6,187" Grid.Column="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">

@@ -9,7 +9,7 @@
       Title="Достопримечательности">
 
     <Grid Background="White">
-        <ListBox x:Name="AttractionListBox" ItemsSource="{Binding Attraction}" IsEnabled="True" Margin="34,67,26,9.6" >
+        <ListBox x:Name="AttractionListBox" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Attraction}" IsEnabled="True" Margin="34,67,26,9.6" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" >

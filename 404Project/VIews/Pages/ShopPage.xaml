@@ -9,7 +9,7 @@
       Title="Магазины">
 
     <Grid Background="White">
-        <ListView x:Name="ShopListBox" Margin="33,75,23,9.6" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <ListView x:Name="ShopListBox" Margin="33,75,23,9.6" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" >

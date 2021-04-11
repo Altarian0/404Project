@@ -9,7 +9,7 @@
       Title="Товары">
 
     <Grid Background="White">
-        <ListView x:Name="ProductsView" Margin="55,118,46,32.6"  >
+        <ListView x:Name="ProductsView" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="55,118,46,32.6"  >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel Margin="5" Orientation="Vertical">

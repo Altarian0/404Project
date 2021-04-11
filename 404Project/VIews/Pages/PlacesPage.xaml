@@ -9,7 +9,7 @@
       Title="Местоположения">
 
     <Grid Background="White">
-        <DataGrid x:Name="PlacesGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="51,82,56,9.6">
+        <DataGrid x:Name="PlacesGrid"  AutoGenerateColumns="False" IsReadOnly="True" Margin="51,82,56,9.6">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название"  Binding="{Binding Name}" Width="*"/>
                 <DataGridTextColumn Header="Широта"   Binding="{Binding Latitude}" Width="*"/>
