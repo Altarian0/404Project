@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="itkotdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="itkotdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Agent" EntityType="itkotdbModel.Agent" />
+    <EntitySet Name="Attraction" EntityType="itkotdbModel.Attraction" />
+    <EntitySet Name="AttractionComment" EntityType="itkotdbModel.AttractionComment" />
+    <EntitySet Name="AttractionImage" EntityType="itkotdbModel.AttractionImage" />
+    <EntitySet Name="Company" EntityType="itkotdbModel.Company" />
+    <EntitySet Name="Place" EntityType="itkotdbModel.Place" />
+    <EntitySet Name="Product" EntityType="itkotdbModel.Product" />
+    <EntitySet Name="ProductComment" EntityType="itkotdbModel.ProductComment" />
+    <EntitySet Name="ProductImage" EntityType="itkotdbModel.ProductImage" />
+    <EntitySet Name="Role" EntityType="itkotdbModel.Role" />
+    <EntitySet Name="Shop" EntityType="itkotdbModel.Shop" />
+    <EntitySet Name="sysdiagrams" EntityType="itkotdbModel.sysdiagrams" />
+    <EntitySet Name="Tour" EntityType="itkotdbModel.Tour" />
+    <EntitySet Name="TourComment" EntityType="itkotdbModel.TourComment" />
+    <EntitySet Name="User" EntityType="itkotdbModel.User" />
+    <AssociationSet Name="FK_Agent_Company" Association="itkotdbModel.FK_Agent_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Agent" EntitySet="Agent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Agent_Userr" Association="itkotdbModel.FK_Agent_Userr">
+      <End Role="User" EntitySet="User" />
+      <End Role="Agent" EntitySet="Agent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttractionComment_Attraction" Association="itkotdbModel.FK_AttractionComment_Attraction">
+      <End Role="Attraction" EntitySet="Attraction" />
+      <End Role="AttractionComment" EntitySet="AttractionComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttractionImages_Attraction" Association="itkotdbModel.FK_AttractionImages_Attraction">
+      <End Role="Attraction" EntitySet="Attraction" />
+      <End Role="AttractionImage" EntitySet="AttractionImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tours_Place" Association="itkotdbModel.FK_Tours_Place">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="Tour" EntitySet="Tour" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tours_Place1" Association="itkotdbModel.FK_Tours_Place1">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="Tour" EntitySet="Tour" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Shop" Association="itkotdbModel.FK_Product_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductComment_Product" Association="itkotdbModel.FK_ProductComment_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductComment" EntitySet="ProductComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImages_Product" Association="itkotdbModel.FK_ProductImages_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductImage" EntitySet="ProductImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Userr_Role" Association="itkotdbModel.FK_Userr_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourComments_Tours" Association="itkotdbModel.FK_TourComments_Tours">
+      <End Role="Tour" EntitySet="Tour" />
+      <End Role="TourComment" EntitySet="TourComment" />
+    </AssociationSet>
+    <AssociationSet Name="PlaceShops" Association="itkotdbModel.PlaceShops">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="Shop" EntitySet="Shop" />
+    </AssociationSet>
+    <AssociationSet Name="TourAttraction" Association="itkotdbModel.TourAttraction">
+      <End Role="Attraction" EntitySet="Attraction" />
+      <End Role="Tour" EntitySet="Tour" />
+    </AssociationSet>
+    <AssociationSet Name="UserTours" Association="itkotdbModel.UserTours">
+      <End Role="Tour" EntitySet="Tour" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourComments_Tours1" Association="itkotdbModel.FK_TourComments_Tours1">
+      <End Role="Tour" EntitySet="Tour" />
+      <End Role="TourComment" EntitySet="TourComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourComment_User" Association="itkotdbModel.FK_TourComment_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="TourComment" EntitySet="TourComment" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="itkotdbModel.FK_Agent_Company" FromRole="Agent" ToRole="Company" />
+    <NavigationProperty Name="User" Relationship="itkotdbModel.FK_Agent_Userr" FromRole="Agent" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Attraction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceId" Type="Int32" />
+    <NavigationProperty Name="AttractionComment" Relationship="itkotdbModel.FK_AttractionComment_Attraction" FromRole="Attraction" ToRole="AttractionComment" />
+    <NavigationProperty Name="AttractionImage" Relationship="itkotdbModel.FK_AttractionImages_Attraction" FromRole="Attraction" ToRole="AttractionImage" />
+    <NavigationProperty Name="Tour" Relationship="itkotdbModel.TourAttraction" FromRole="Attraction" ToRole="Tour" />
+  </EntityType>
+  <EntityType Name="AttractionComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="AttractionId" Type="Int32" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Rating" Type="Int32" />
+    <NavigationProperty Name="Attraction" Relationship="itkotdbModel.FK_AttractionComment_Attraction" FromRole="AttractionComment" ToRole="Attraction" />
+  </EntityType>
+  <EntityType Name="AttractionImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AttractionId" Type="Int32" />
+    <NavigationProperty Name="Attraction" Relationship="itkotdbModel.FK_AttractionImages_Attraction" FromRole="AttractionImage" ToRole="Attraction" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Agent" Relationship="itkotdbModel.FK_Agent_Company" FromRole="Company" ToRole="Agent" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Longitude" Type="Double" />
+    <NavigationProperty Name="Tour" Relationship="itkotdbModel.FK_Tours_Place" FromRole="Place" ToRole="Tour" />
+    <NavigationProperty Name="Tour1" Relationship="itkotdbModel.FK_Tours_Place1" FromRole="Place" ToRole="Tour" />
+    <NavigationProperty Name="Shop" Relationship="itkotdbModel.PlaceShops" FromRole="Place" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShopId" Type="Int32" />
+    <NavigationProperty Name="Shop" Relationship="itkotdbModel.FK_Product_Shop" FromRole="Product" ToRole="Shop" />
+    <NavigationProperty Name="ProductComment" Relationship="itkotdbModel.FK_ProductComment_Product" FromRole="Product" ToRole="ProductComment" />
+    <NavigationProperty Name="ProductImage" Relationship="itkotdbModel.FK_ProductImages_Product" FromRole="Product" ToRole="ProductImage" />
+    <Property Name="Price" Type="Double" />
+  </EntityType>
+  <EntityType Name="ProductComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Rating" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="itkotdbModel.FK_ProductComment_Product" FromRole="ProductComment" ToRole="Product" />
+    <Property Name="Author" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="itkotdbModel.FK_ProductImages_Product" FromRole="ProductImage" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="itkotdbModel.FK_Userr_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Shop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LogoImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="itkotdbModel.FK_Product_Shop" FromRole="Shop" ToRole="Product" />
+    <NavigationProperty Name="Place" Relationship="itkotdbModel.PlaceShops" FromRole="Shop" ToRole="Place" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tour">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FromPlaceId" Type="Int32" />
+    <Property Name="ToPlaceId" Type="Int32" />
+    <NavigationProperty Name="Place" Relationship="itkotdbModel.FK_Tours_Place" FromRole="Tour" ToRole="Place" />
+    <NavigationProperty Name="Place1" Relationship="itkotdbModel.FK_Tours_Place1" FromRole="Tour" ToRole="Place" />
+    <NavigationProperty Name="TourComment" Relationship="itkotdbModel.FK_TourComments_Tours" FromRole="Tour" ToRole="TourComment" />
+    <NavigationProperty Name="Attraction" Relationship="itkotdbModel.TourAttraction" FromRole="Tour" ToRole="Attraction" />
+    <NavigationProperty Name="User" Relationship="itkotdbModel.UserTours" FromRole="Tour" ToRole="User" />
+    <Property Name="Price" Type="Double" />
+    <NavigationProperty Name="TourComment1" Relationship="itkotdbModel.FK_TourComments_Tours1" FromRole="Tour" ToRole="TourComment" />
+  </EntityType>
+  <EntityType Name="TourComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Rating" Type="Int32" />
+    <Property Name="TourId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tour" Relationship="itkotdbModel.FK_TourComments_Tours" FromRole="TourComment" ToRole="Tour" />
+    <Property Name="Author" Type="Int32" />
+    <NavigationProperty Name="Tour1" Relationship="itkotdbModel.FK_TourComments_Tours1" FromRole="TourComment" ToRole="Tour" />
+    <NavigationProperty Name="User" Relationship="itkotdbModel.FK_TourComment_User" FromRole="TourComment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="Agent" Relationship="itkotdbModel.FK_Agent_Userr" FromRole="User" ToRole="Agent" />
+    <NavigationProperty Name="Role" Relationship="itkotdbModel.FK_Userr_Role" FromRole="User" ToRole="Role" />
+    <NavigationProperty Name="Tour" Relationship="itkotdbModel.UserTours" FromRole="User" ToRole="Tour" />
+    <NavigationProperty Name="TourComment" Relationship="itkotdbModel.FK_TourComment_User" FromRole="User" ToRole="TourComment" />
+  </EntityType>
+  <Association Name="FK_Agent_Company">
+    <End Type="itkotdbModel.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="itkotdbModel.Agent" Role="Agent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Agent">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Agent_Userr">
+    <End Type="itkotdbModel.User" Role="User" Multiplicity="1" />
+    <End Type="itkotdbModel.Agent" Role="Agent" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Agent">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttractionComment_Attraction">
+    <End Type="itkotdbModel.Attraction" Role="Attraction" Multiplicity="0..1" />
+    <End Type="itkotdbModel.AttractionComment" Role="AttractionComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attraction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttractionComment">
+        <PropertyRef Name="AttractionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttractionImages_Attraction">
+    <End Type="itkotdbModel.Attraction" Role="Attraction" Multiplicity="0..1" />
+    <End Type="itkotdbModel.AttractionImage" Role="AttractionImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attraction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttractionImage">
+        <PropertyRef Name="AttractionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tours_Place">
+    <End Type="itkotdbModel.Place" Role="Place" Multiplicity="0..1" />
+    <End Type="itkotdbModel.Tour" Role="Tour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tour">
+        <PropertyRef Name="FromPlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tours_Place1">
+    <End Type="itkotdbModel.Place" Role="Place" Multiplicity="0..1" />
+    <End Type="itkotdbModel.Tour" Role="Tour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tour">
+        <PropertyRef Name="ToPlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Shop">
+    <End Type="itkotdbModel.Shop" Role="Shop" Multiplicity="0..1" />
+    <End Type="itkotdbModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductComment_Product">
+    <End Type="itkotdbModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="itkotdbModel.ProductComment" Role="ProductComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductComment">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImages_Product">
+    <End Type="itkotdbModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="itkotdbModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Userr_Role">
+    <End Type="itkotdbModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="itkotdbModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourComments_Tours">
+    <End Type="itkotdbModel.Tour" Role="Tour" Multiplicity="1" />
+    <End Type="itkotdbModel.TourComment" Role="TourComment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tour">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TourComment">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PlaceShops">
+    <End Type="itkotdbModel.Place" Role="Place" Multiplicity="*" />
+    <End Type="itkotdbModel.Shop" Role="Shop" Multiplicity="*" />
+  </Association>
+  <Association Name="TourAttraction">
+    <End Type="itkotdbModel.Attraction" Role="Attraction" Multiplicity="*" />
+    <End Type="itkotdbModel.Tour" Role="Tour" Multiplicity="*" />
+  </Association>
+  <Association Name="UserTours">
+    <End Type="itkotdbModel.Tour" Role="Tour" Multiplicity="*" />
+    <End Type="itkotdbModel.User" Role="User" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_TourComments_Tours1">
+    <End Type="itkotdbModel.Tour" Role="Tour" Multiplicity="1" />
+    <End Type="itkotdbModel.TourComment" Role="TourComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tour">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TourComment">
+        <PropertyRef Name="TourId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourComment_User">
+    <End Type="itkotdbModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="itkotdbModel.TourComment" Role="TourComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TourComment">
+        <PropertyRef Name="Author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
