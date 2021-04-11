@@ -1,0 +1,22 @@
+﻿<Window x:Class="_404Project.VIews.Forms.PlaceFolder.EditPlaceForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_404Project.VIews.Forms.PlaceFolder"
+        mc:Ignorable="d"
+        Title="Редактирование местоположения" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <TextBox x:Name="NameBox" Width="500" Text="{Binding Name}"  Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,57,0,0"   />
+
+        <TextBlock Text="Название" FontSize="14"  TextAlignment="Center" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,66,0,0"/>
+        <TextBox x:Name="LongitudeBox" Width="500" Text="{Binding Longitude}"  Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,118,0,0"   />
+        <TextBlock Text="Долгота" FontSize="14"  TextAlignment="Center" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,127,0,0"/>
+        <TextBox x:Name="Latidute" Width="500" Text="{Binding Latitude}"  Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,178,0,0"   />
+
+        <TextBlock Text="Широта" FontSize="14"  TextAlignment="Center" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,187,0,0"/>
+        <Button x:Name="SaveBtn" HorizontalAlignment="Right" Content="Сохранить" Height="40" Width="150" VerticalAlignment="Bottom" Margin="0,0,19.6,10" Click="SaveBtn_Click"/>
+        <Button x:Name="CancelBtn" HorizontalAlignment="Right" Content="Закрыть" Height="40" Width="150" VerticalAlignment="Bottom" Margin="0,0,174.6,10" Click="CancelBtn_Click"/>
+
+    </Grid>
+</Window>

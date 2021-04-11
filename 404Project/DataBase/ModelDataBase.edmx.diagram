@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e0122cea05bc47dda5c82eba48bfb774" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="itkotdbModel.Attraction" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.AttractionComment" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.AttractionImage" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.Company" Width="1.5" PointX="11.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.Gender" Width="1.5" PointX="11.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.GidHelper" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.Place" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.Product" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.ProductComment" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.ProductImage" Width="1.5" PointX="7.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.Role" Width="1.5" PointX="11.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.Shop" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.Tour" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.TourComment" Width="1.5" PointX="10.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="itkotdbModel.User" Width="1.5" PointX="13.5" PointY="6.25" IsExpanded="true" />
+        <AssociationConnector Association="itkotdbModel.FK_Attraction_Place" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_AttractionComment_Attraction" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_AttractionImages_Attraction" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_User_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_Shop_Place" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_Tours_Place" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_Tours_Place1" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_Product_Shop" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_ProductComment_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_ProductImages_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_Userr_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_TourComments_Tours" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.FK_TourComment_User" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.Agent" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.TourAttraction" ManuallyRouted="false" />
+        <AssociationConnector Association="itkotdbModel.UserTours" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

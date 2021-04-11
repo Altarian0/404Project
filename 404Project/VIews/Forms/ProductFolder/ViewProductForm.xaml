@@ -1,0 +1,17 @@
+﻿<Window x:Class="_404Project.VIews.Forms.ProductFolder.ViewProductForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_404Project.VIews.Forms.ProductFolder"
+        mc:Ignorable="d"
+        Title="Информация о продукте" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock x:Name="Name" Width="500" Text="{Binding Name}"  Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,7,0,0"   />
+        <TextBlock Text="Название" FontSize="14"  TextAlignment="Center" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,16,0,0"/>
+        <TextBlock x:Name="Description" TextWrapping="WrapWithOverflow"  Width="547" Text="{Binding Description}"  Height="177" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,55,0,0"   />
+        <TextBlock Text="Описание" FontSize="14"  TextAlignment="Center" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,55,0,0"/>
+        <TextBlock x:Name="PriceBox" Width="500" Text="{Binding Price}"  Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,254,0,0"   />
+        <TextBlock FontSize="14"  TextAlignment="Center" Width="161" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,260,0,0"><Run Text="Цена ("/><Run Text="Руб)"/></TextBlock>
+    </Grid>
+</Window>

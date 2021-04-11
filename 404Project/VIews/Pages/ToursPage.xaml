@@ -1,0 +1,73 @@
+﻿<Page x:Class="_404Project.VIews.Pages.ToursPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_404Project.VIews.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Туры">
+
+    <Grid Background="White">
+        <ListView x:Name="TourListBox" Margin="33,89,23,9.6" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                <TextBlock Background="Wheat" Text="{Binding Name, StringFormat=Тур: \{0\}}" HorizontalAlignment="Left"  FontSize="22"/>
+                                <Image x:Name="FirtLogo" Height="250" Width="250" Stretch="Fill" HorizontalAlignment="Center" Source="{Binding FirsImage}"/>
+                                <TextBlock Text="{Binding Marshrut}" HorizontalAlignment="Center"  FontSize="11" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Margin="10 0 0 0" IsEnabled="False" >
+                            <StackPanel Orientation="Vertical" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <TextBlock  TextWrapping="Wrap" Width="500" Text="{Binding Description, StringFormat=Описание: \{0\}}"/>
+                                <TextBlock  TextWrapping="Wrap" Width="500" Text="{Binding StartDate, StringFormat=Дата начала: \{0\}}"/>
+                                <TextBlock  TextWrapping="Wrap" Width="500" Text="{Binding EndDate, StringFormat=Дата конца: \{0\}}"/>
+                                <TextBlock  TextWrapping="Wrap" Width="500" Text="{Binding Price, StringFormat= Цена: \{0\} ₽}"/>
+                                <TextBlock  TextWrapping="Wrap" Width="500" Text="{Binding Agent.User.FullName, StringFormat= Агент: \{0\}}"/>
+                                <TextBlock  TextWrapping="Wrap" Width="500" Text="{Binding Company.Name, StringFormat= Компания: \{0\}}"/>
+
+                                <ListBox ItemsSource="{Binding Attraction}" IsEnabled="False" >
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Vertical" >
+                                                <TextBlock  TextWrapping="Wrap"  Text="{Binding AttractionPlace}"/>
+                                                <ListBox  ItemsSource="{Binding AttractionImage}" IsEnabled="True" >
+                                                    <ListBox.ItemsPanel>
+                                                        <ItemsPanelTemplate>
+                                                            <WrapPanel Orientation="Horizontal"/>
+                                                        </ItemsPanelTemplate>
+                                                    </ListBox.ItemsPanel>
+                                                    <ListBox.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Image  Height="80" Width="80" Stretch="Fill" HorizontalAlignment="Center" Source="{Binding Source}"/>
+                                                        </DataTemplate>
+                                                    </ListBox.ItemTemplate>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                            <Grid Background="Wheat" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                                <StackPanel  Orientation="Horizontal " VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Right"  FontSize="18" Text="{Binding RatingTour, StringFormat=Рейтинг: \{0\}}"/>
+                                    <Image Height="10" Width="10" Margin="5 0 0 0" HorizontalAlignment="Left" Stretch="Fill" Source="/404Project;component/Resources/outline_star_black_24dp.png"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="AddBtn" HorizontalAlignment="Right" Content="Добавить" Width="150" Margin="0,10,18,0" Click="AddBtn_Click" Height="40" VerticalAlignment="Top"/>
+        <Button x:Name="DeleteBtn" HorizontalAlignment="Right" Content="Удалить" Width="150" Margin="0,10,177,0" Click="DeleteBtn_Click" Height="40" VerticalAlignment="Top"/>
+        <Button x:Name="EditBtn" HorizontalAlignment="Right" Content="Изменить" Width="150" Margin="0,10,337,0" Click="EditBtn_Click" Height="40" VerticalAlignment="Top"/>
+        <Button x:Name="CommentBtn" Content="Комментарии" Margin="33,10,0,0" Click="CommentBtn_Click" HorizontalAlignment="Left" Width="150" Height="40" VerticalAlignment="Top"/>
+        <TextBox x:Name="SearchBox" Width="217" TextChanged="SearchBox_TextChanged"  Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="105,55,0,0"   />
+        <TextBlock Text="Поиск " FontSize="14" TextAlignment="Center" Width="121" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,60,0,0"/>
+
+    </Grid>
+</Page>
